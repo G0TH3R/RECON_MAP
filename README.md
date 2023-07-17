@@ -69,6 +69,9 @@ This is an example of how to list things you need to use the software and how to
 
 This Bash script is designed for reconnaissance purposes and can be used by providing a target VM name and IP address as arguments to create a directory, display a banner, perform port scanning with `nmap`, and generate a "ScratchPad" file for note-taking during the reconnaissance process.
 
+```bash
+   sudo ./recon_map <name of Folder> <IP address
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
