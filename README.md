@@ -5,10 +5,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
+      <a href="#about-the-project">About The Project</a>   
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -18,40 +15,31 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-This is small bash script to facilitate reconnaissance
-
+This is a small bash script to facilitate reconnaissance
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
 This code can be used as a starting point for reconnaissance tasks and performing port scanning using `nmap`. 
 
 ### Prerequisites
-
 This is an example of how to list things you need to use the software and how to install them.
 * **`nmap`**
   ```sh
-  sudo apt get install nmap
+  sudo apt-get install nmap
   ```
 
 ### Installation
-
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/G0TH3R/RECON_MAP.git
    ```
 2. Change into the RECON_NMAP directory
    ```sh
@@ -66,21 +54,17 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
 This Bash script is designed for reconnaissance purposes and can be used by providing a target VM name and IP address as arguments to create a directory, display a banner, perform port scanning with `nmap`, and generate a "ScratchPad" file for note-taking during the reconnaissance process.
-
 ```bash
    sudo ./recon_map <name of Folder> <IP address
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- CONTRIBUTING -->
 ## Contributing
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have a suggestion to improve this, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
 Don't forget to give the project a star! Thanks again!
 
@@ -102,10 +86,8 @@ This program is free software: you can redistribute it and/or modify it under th
 
 <!-- CONTACT -->
 ## Contact
-
 G0TH3R - [@G0TH3r_IO](https://twitter.com/@G0TH3R_IO) - gother@gother.io
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/G0TH3R/RECON_MAP](https://github.com/G0TH3R/RECON_MAP)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
