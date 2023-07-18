@@ -11,7 +11,7 @@
 #     file for note-taking during the reconnaissance process.
 #
 # usage:
-#           sudo ./recon_map <Folder Name> <ip address>
+#           sudo recon_map <folder Name> <ip address>
 #
 
 # Check if arguments are provided
@@ -47,7 +47,7 @@ banner="
   ███    ███   ███    ███ ███    ███ ███    ███ ███   ███ 
   ███    ███   ██████████ ████████▀   ▀██████▀   ▀█   █▀  
   ███    ███   ${BLUE}Author: @G0TH3R_IO${GREEN}
-   ▀█    █▀    ${YELLOW}Usage: ./recon_map <Folder Name> <IP Address>${RESET}                                             
+   ▀█    █▀    ${YELLOW}Usage: ./recon_map <Target Name> <IP Address>${RESET}                                             
 "
 echo -e "\n${GREEN}$banner${RESET}"
 # Check if the directory already exists
@@ -104,12 +104,22 @@ python3 /home/crimson/Scripts/ip_update_panel.py "$ip_vm" &
 echo -e "${YELLOW}\n[+] Finding Open Ports \n${RESET}"
 nmap -Pn -p- -T4 $ip_vm -oN $target_$ip_vm
 
-port_number=$(grep -oP '^\d+/' $target_$ip_vm | cut -d'/' -f1)
-echo -e "\n\t${GREEN}Port number: $port_number${RESET}"
+nmap_output=$(cat $target_$ip_vm)
+
+# Extract the lines containing the port numbers and filter out unwanted lines
+port_lines=$(echo "$nmap_output" | awk '/\/tcp/ {print $1}')
+
+# Remove the "/tcp" suffix from each port number
+ports=$(echo "$port_lines" | awk -F'/' '{print $1}')
+
+# Concatenate the ports with commas
+port_number=$(echo "$ports" | paste -sd "," -)
+
+echo "These are the ports: $port_number"
+
 
 
 # Executes NMAP with a comprehensive scan
 echo -e "${YELLOW}\n[+] Processing NMAP ${RESET}"
 nmap -Pn -sV -sC -p "$port_number" "$ip_vm" -oN "${target}_${ip_vm}-NMAP"
 echo -e "${GREEN}\n[>]Target: ${RED}$target${RESET} ${GREEN}IP:${RESET} ${RED}$ip_vm ${GREEN}Ports: ${YELLOW}$port_number${RESET}"
-
